@@ -1,3 +1,6 @@
+psycopg2-binary
+djangorestframework
+djangorestframework-simplejwt
 asgiref==3.8.1
 Django==5.2.1
 ping3==4.0.8

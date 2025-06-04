@@ -1,0 +1,18 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Blog Posts</h1>
+    <div class="list-group">
+        {% for blog in blogs %}
+            <div class="list-group-item">
+                <h5 class="mb-1">{{ blog.title }}</h5>
+                <p class="text-muted mb-1">By {{ blog.author.name }}</p>
+                <p class="mb-1">{{ blog.content|truncatewords:30 }}</p> <!-- Truncates the content to 30 words -->
+                <a href="#" class="btn btn-primary btn-sm">Read More</a>
+            </div>
+        {% empty %}
+            <p>No blog posts available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
