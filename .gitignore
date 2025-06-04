@@ -1,1 +1,17 @@
-.env
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# macOS Finder metadata
+.DS_Store
+
+# Virtual environments
+venv/
+.env/
+*.env
+
+# Django files
+db.sqlite3
+
+# Logs
+*.log
