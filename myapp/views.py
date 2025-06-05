@@ -10,6 +10,7 @@ from .models import Blog, Author
 from .forms import BlogForm
 from django.contrib import messages
 from django.views.generic.edit import UpdateView
+from .tasks import send_registration_email
 
 # Create your views here.
 def index(request):
@@ -48,6 +49,11 @@ def signup(request):
             )
             # new_user.is_active = False
             new_user.save()
+            # send_registration_email.delay(
+            #     to_email=new_user.email,
+            #     subject="Welcome to PlugnPlay",
+            #     message="Thanks for registering with us!"
+            # )
         except:
             pass
         return redirect('/signin/')
